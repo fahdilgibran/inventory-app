@@ -16,7 +16,6 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->enum('status', ['tersedia', 'habis'])->default('tersedia');
 
-            // 2. Ubah tipe price menjadi bigInteger
             $table->bigInteger('price')->change();
         });
     }
