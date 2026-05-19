@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CategoryController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -16,3 +17,5 @@ Route::get('/delete/{id}', [App\Http\Controllers\ProductController::class, 'dele
 // Form Create & Store
 Route::get('/products/create', [App\Http\Controllers\ProductController::class, 'create']);
 Route::post('/products/store', [App\Http\Controllers\ProductController::class, 'store']);
+
+Route::resource('categories', CategoryController::class);
